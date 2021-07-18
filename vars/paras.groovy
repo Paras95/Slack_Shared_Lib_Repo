@@ -10,7 +10,7 @@ def beta(){
     echo "from beta"
 }
 
-def class1(){
+def class1(this, this){
     def obj = new ParasSrc(this, this)
     obj.env()
 }
