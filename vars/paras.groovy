@@ -1,5 +1,5 @@
 
-
+import src.*
 
 def call(){
     sh"ls -al"
@@ -8,4 +8,9 @@ def call(){
 
 def beta(){
     echo "from beta"
+}
+
+def class1(){
+    def obj = new parasSrc(this, this)
+    obj.env()
 }
