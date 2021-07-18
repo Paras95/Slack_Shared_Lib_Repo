@@ -11,6 +11,6 @@ def beta(){
 }
 
 def class1(steps, script){
-    def obj = new ParasSrc(this, this)
+    def obj = new ParasSrc(steps, script)
     obj.env()
 }
