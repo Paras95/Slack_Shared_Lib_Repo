@@ -1,5 +1,5 @@
 
-import org.foo.ParasSrc.*
+import org.foo.ParasSrc
 
 def call(){
     sh"ls -al"
