@@ -2,7 +2,7 @@
 
 
 def call(){
-    sh"top"
+    sh"ls -al"
     echo "my first vars function"
 }
 
