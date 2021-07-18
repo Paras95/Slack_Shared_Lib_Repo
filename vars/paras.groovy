@@ -1,5 +1,5 @@
 
-import org.foo.parasSrc.*
+import org.foo.ParasSrc.*
 
 def call(){
     sh"ls -al"
@@ -11,6 +11,6 @@ def beta(){
 }
 
 def class1(){
-    def obj = new parasSrc(this, this)
+    def obj = new ParasSrc(this, this)
     obj.env()
 }
