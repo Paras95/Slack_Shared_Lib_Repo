@@ -1,5 +1,5 @@
 
-import src.*
+import src.org.foo.parasSrc
 
 def call(){
     sh"ls -al"
