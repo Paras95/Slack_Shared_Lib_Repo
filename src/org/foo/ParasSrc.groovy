@@ -1,9 +1,9 @@
 
 package org.foo
-class parasSrc implements Serializable {
+class ParasSrc implements Serializable {
   def script
   def steps
-  parasSrc(steps, script) {
+  ParasSrc(steps, script) {
     this.steps = steps
     this.script = script
   }
