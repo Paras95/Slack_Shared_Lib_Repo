@@ -13,7 +13,7 @@ class ParasSrc implements Serializable {
   
   def env(){
     steps.echo "build number----------${script.env.BUILD_NUMBER}"
-    steps.sh "mvn clean install"
+    steps.sh "mvn install"
     steps.sh 'mvn test'
     steps.echo "testing.......1,2,3"
     script{
