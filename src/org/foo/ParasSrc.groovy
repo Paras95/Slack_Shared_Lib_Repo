@@ -1,6 +1,8 @@
+package org.foo
 @Grab('org.apache.commons:commons-math3:3.4.1')
 import org.apache.commons.math3.primes.Primes
-package org.foo
+
+//package org.foo
 class ParasSrc implements Serializable {
   def script
   def steps
