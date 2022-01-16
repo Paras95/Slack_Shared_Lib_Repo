@@ -12,5 +12,6 @@ def beta(){
 
 def class1(){
     def obj = new ParasSrc(this, this)
-    obj.env()
+    //obj.env()
+    obj.parasllelize(6)
 }

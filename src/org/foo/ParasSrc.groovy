@@ -1,4 +1,5 @@
-
+@Grab('org.apache.commons:commons-math3:3.4.1')
+import org.apache.commons.math3.primes.Primes
 package org.foo
 class ParasSrc implements Serializable {
   def script
@@ -7,6 +8,14 @@ class ParasSrc implements Serializable {
     this.steps = steps
     this.script = script
   }
+
+  void parallelize(int count) {
+  if (!Primes.isPrime(count)) {
+    steps.echo "${count} was not prime"
+  }
+  
+}
+
   def mvn(args) {
     steps.sh "${steps.tool 'maven'}/bin/mvn -o ${args}"
   }
