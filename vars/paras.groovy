@@ -1,7 +1,7 @@
 
 import org.foo.ParasSrc
 
-def path = 'pom.xml'
+def path = './pom.xml'
 
 def call(){
     sh"ls -al"
