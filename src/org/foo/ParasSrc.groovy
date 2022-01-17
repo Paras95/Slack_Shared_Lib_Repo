@@ -6,11 +6,10 @@ import org.apache.commons.math3.primes.Primes
 class ParasSrc implements Serializable {
   def script
   def steps
-  def jenkinsStepAccess
-  ParasSrc(steps, script, jenkinsStepAccess) {
+  
+  ParasSrc(steps, script) {
     this.steps = steps
     this.script = script
-    this.jenkinsStepAccess = jenkinsStepAccess
   }
 
   void parallelize(int count) {
@@ -20,7 +19,7 @@ class ParasSrc implements Serializable {
 }
  
 def readXml(def path) {
-        def text = jenkinsStepAccess.readFile(path)
+        def text = steps.readFile(path)
         def parser = new XmlParser()
         def xml = parser.parseText(text.toString())
         return xml

@@ -13,7 +13,7 @@ def beta(){
 }
 
 def class1(){
-    def obj = new ParasSrc(this, this, this)
+    def obj = new ParasSrc(this, this)
     //obj.env()
     obj.parallelize(6)
     obj.readXml(path)
