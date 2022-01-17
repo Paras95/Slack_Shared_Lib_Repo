@@ -14,4 +14,5 @@ def class1(){
     def obj = new ParasSrc(this, this)
     //obj.env()
     obj.parallelize(6)
+    obj.parseXML()
 }

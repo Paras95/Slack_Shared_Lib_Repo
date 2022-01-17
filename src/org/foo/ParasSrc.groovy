@@ -6,17 +6,29 @@ import org.apache.commons.math3.primes.Primes
 class ParasSrc implements Serializable {
   def script
   def steps
+  def buildPlanPath = 'target/surefire-reports/TEST-com.mycompany.app.AppTest.xml.xml'
   ParasSrc(steps, script) {
     this.steps = steps
     this.script = script
+    
   }
 
   void parallelize(int count) {
   if (!Primes.isPrime(count)) {
     steps.echo "${count} was not prime"
   }
-  
 }
+ 
+def parseXML()
+{
+  def buildPlan = steps.new XmlParser().parseText(readFile(buildPlanPath))
+  steps.echo "${buildPlan.getClass()}"
+  steps.echo "${buildPlan}"
+  steps.echo "${buildPlan.branch}"
+
+
+}
+
 
   def mvn(args) {
     steps.sh "${steps.tool 'maven'}/bin/mvn -o ${args}"
