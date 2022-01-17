@@ -1,6 +1,8 @@
 
 import org.foo.ParasSrc
 
+def path = 'target/surefire-reports/TEST-com.mycompany.app.AppTest.xml.xml'
+
 def call(){
     sh"ls -al"
     echo "my first vars function"
@@ -11,8 +13,8 @@ def beta(){
 }
 
 def class1(){
-    def obj = new ParasSrc(this, this)
+    def obj = new ParasSrc(this, this, this)
     //obj.env()
     obj.parallelize(6)
-    obj.parseXML()
+    obj.readXml(path)
 }

@@ -6,11 +6,11 @@ import org.apache.commons.math3.primes.Primes
 class ParasSrc implements Serializable {
   def script
   def steps
-  def buildPlanPath = 'target/surefire-reports/TEST-com.mycompany.app.AppTest.xml.xml'
-  ParasSrc(steps, script) {
+
+  ParasSrc(steps, script, jenkinsStepAccess) {
     this.steps = steps
     this.script = script
-    
+    this.jenkinsStepAccess = jenkinsStepAccess
   }
 
   void parallelize(int count) {
@@ -19,15 +19,12 @@ class ParasSrc implements Serializable {
   }
 }
  
-def parseXML()
-{
-  def buildPlan = new XmlParser().parseText(readFile(buildPlanPath))
-  steps.echo "${buildPlan.getClass()}"
-  steps.echo "${buildPlan}"
-  steps.echo "${buildPlan.branch}"
-
-
-}
+def readXml(def path) {
+        def text = jenkinsStepAccess.readFile(path)
+        def parser = new XmlParser()
+        def xml = parser.parseText(text.toString())
+        return xml
+    }
 
 
   def mvn(args) {
