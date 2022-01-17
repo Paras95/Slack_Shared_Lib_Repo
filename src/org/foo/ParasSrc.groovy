@@ -6,7 +6,7 @@ import org.apache.commons.math3.primes.Primes
 class ParasSrc implements Serializable {
   def script
   def steps
-
+  def jenkinsStepAccess
   ParasSrc(steps, script, jenkinsStepAccess) {
     this.steps = steps
     this.script = script
