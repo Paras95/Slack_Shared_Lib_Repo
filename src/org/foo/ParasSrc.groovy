@@ -25,6 +25,7 @@ class ParasSrc implements Serializable {
         def parser = new XmlParser()
         steps.echo "from readXml 123"
         def xml = parser.parseText(text.toString())
+        steps.echo "${xml}"
         steps.echo "from readXml 1234"
         return xml
   }
