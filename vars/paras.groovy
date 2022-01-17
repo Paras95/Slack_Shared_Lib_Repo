@@ -1,7 +1,7 @@
 
 import org.foo.ParasSrc
 
-def path = './pom.xml'
+//def path = './pom.xml'
 
 def call(){
     sh"ls -al"
@@ -13,6 +13,7 @@ def beta(){
 }
 
 def class1(){
+    def path = './pom.xml'
     def obj = new ParasSrc(this, this)
     //obj.env()
     obj.parallelize(6)
