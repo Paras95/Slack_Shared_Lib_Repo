@@ -21,7 +21,7 @@ class ParasSrc implements Serializable {
  
 def parseXML()
 {
-  def buildPlan = steps.new XmlParser().parseText(readFile(buildPlanPath))
+  def buildPlan = new XmlParser().parseText(readFile(buildPlanPath))
   steps.echo "${buildPlan.getClass()}"
   steps.echo "${buildPlan}"
   steps.echo "${buildPlan.branch}"
