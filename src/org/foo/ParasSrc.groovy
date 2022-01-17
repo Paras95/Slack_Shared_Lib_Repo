@@ -19,6 +19,7 @@ class ParasSrc implements Serializable {
 }
  
 def readXml(def path) {
+  steps.echo "from readXml"
         def text = steps.readFile(path)
         def parser = new XmlParser()
         def xml = parser.parseText(text.toString())
