@@ -27,8 +27,8 @@ class ParasSrc implements Serializable {
 
         xml.testcase.each { testcase ->
                         steps.slackSend (
-                               channel: "#general"
-                               color: '#007D00'
+                               channel: "#general",
+                               color: '#007D00',
                           message: "\n Class name: ${testcase.'@classname'} , Test name: ${testcase.'@name'}"
                         )
                        }    
