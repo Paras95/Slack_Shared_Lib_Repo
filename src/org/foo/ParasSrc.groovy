@@ -18,17 +18,18 @@ class ParasSrc implements Serializable {
     }
   }
  
-  def readXml(path) {
-   steps.echo "from readXml"
+  def readXml(path) 
+     {
         def text = steps.readFile(path)
-        steps.echo "from readXml12"
         def parser = new XmlParser()
-        steps.echo "from readXml 123"
         def xml = parser.parseText(text.toString())
         steps.echo "${xml}"
-        steps.echo "from readXml 1234"
+        xml.testcase.each { testcase ->
+                            steps.echo "Class name: ${testcase.'@classname'} , Test name: ${testcase.'@name'}"
+                          }
+        steps.echo "completed...."                  
         return xml
-  }
+     }
 
 
   def mvn(args) {
