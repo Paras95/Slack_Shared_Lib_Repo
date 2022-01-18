@@ -17,7 +17,8 @@ class ParasSrc implements Serializable {
        steps.echo "${count} was not prime"
     }
   }
- 
+
+  @NonCPS
   def readXml(path) 
      {
         def text = steps.readFile(path)
