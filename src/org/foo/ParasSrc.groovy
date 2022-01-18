@@ -18,7 +18,7 @@ class ParasSrc implements Serializable {
     }
   }
 
-  @NonCPS
+  
   def readXml(path) 
      {
         def text = steps.readFile(path)
