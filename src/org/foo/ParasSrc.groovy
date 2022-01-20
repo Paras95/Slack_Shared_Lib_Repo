@@ -28,7 +28,7 @@ class ParasSrc implements Serializable {
 
         xml.each { child ->
                 steps.echo "${child}"
-                  if(!child.contains('properties')){
+                  if(!child.toString().contains('properties')){
                         steps.slackSend (
                                channel: "#general",
                                color: '#007D00',
