@@ -25,16 +25,16 @@ class ParasSrc {
         def xml = parser.parseText(text.toString())
         steps.echo "${xml}"
 
-        xml.each { child ->
-                steps.echo "${child}"
-                  if(!child.toString().contains('properties')){
+        xml.testcase.each { child ->
+                //steps.echo "${child}"
+                  
                         steps.slackSend (
                                channel: "#general",
                                color: '#007D00',
                           message: "\n Class name: ${child.'@classname'} , Test name: ${child.'@name'}"
                         )
                   
-                  }
+                  
                 }    
                         
         steps.echo "completed...."                  
