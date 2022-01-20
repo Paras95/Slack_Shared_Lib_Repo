@@ -1,10 +1,9 @@
 package org.foo
 @Grab('org.apache.commons:commons-math3:3.4.1')
 import org.apache.commons.math3.primes.Primes
-import groovy.util.XmlParser
 
 //package org.foo
-class ParasSrc implements Serializable {
+class ParasSrc {
   def script
   def steps
   
@@ -19,7 +18,7 @@ class ParasSrc implements Serializable {
     }
   }
 
-  
+  @NonCPS
   def readXml(path) 
      {
         def text = steps.readFile(path)
