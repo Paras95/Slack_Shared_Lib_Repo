@@ -18,7 +18,6 @@ class ParasSrc {
     }
   }
 
-  @NonCPS
   def readXml(path) 
      {
         def text = steps.readFile(path)
