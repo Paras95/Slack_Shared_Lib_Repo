@@ -26,7 +26,7 @@ class ParasSrc implements Serializable {
         def xml = parser.parseText(text.toString())
         steps.echo "${xml}"
 
-        xml.testsuite.each { child ->
+        xml.each { child ->
                 steps.echo "${child}"
                 /**  if(child != 'properties'){
                         steps.slackSend (
