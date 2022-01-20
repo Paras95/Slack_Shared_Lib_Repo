@@ -27,14 +27,15 @@ class ParasSrc implements Serializable {
         steps.echo "${xml}"
 
         xml.testsuite.each { child ->
-                  if(child != 'properties'){
+                steps.echo "${child}"
+                /**  if(child != 'properties'){
                         steps.slackSend (
                                channel: "#general",
                                color: '#007D00',
                           message: "\n Class name: ${child.'@classname'} , Test name: ${child.'@name'}"
                         )
                   
-                  }
+                  }**/
                 }    
                         
         steps.echo "completed...."                  
