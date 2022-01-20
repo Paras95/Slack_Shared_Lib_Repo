@@ -26,13 +26,16 @@ class ParasSrc implements Serializable {
         def xml = parser.parseText(text.toString())
         steps.echo "${xml}"
 
-        xml.testcase.each { testcase ->
+        xml.testsuite.each { child ->
+                  if(child != 'properties'){
                         steps.slackSend (
                                channel: "#general",
                                color: '#007D00',
-                          message: "\n Class name: ${testcase.'@classname'} , Test name: ${testcase.'@name'}"
+                          message: "\n Class name: ${child.'@classname'} , Test name: ${child.'@name'}"
                         )
-                       }    
+                  
+                  }
+                }    
                         
         steps.echo "completed...."                  
         return xml
